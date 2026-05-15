@@ -6,11 +6,9 @@ using namespace std;
 int main() {
     setup_russian_locale();
 
-    cout << "=== Демонстрация работы класса Polynomial ===" << endl;
-
     // Создание полиномов
-    Polynomial<int> p1({1, 2, 3});  // 1 + 2x + 3x^2
-    Polynomial<int> p2({4, 5});      // 4 + 5x
+    Polynomial<int> p1({1, 2, 3}); 
+    Polynomial<int> p2({4, 5});     
 
     cout << "p1 = 1 + 2x + 3x^2" << endl;
     cout << "p2 = 4 + 5x" << endl;
@@ -32,8 +30,8 @@ int main() {
          << prod.coefficient(3) << "x^3" << endl;
 
     // Деление
-    Polynomial<int> p3({1, 0, 0, 1});  // 1 + x^3
-    Polynomial<int> p4({1, 1});         // 1 + x
+    Polynomial<int> p3({1, 0, 0, 1});  
+    Polynomial<int> p4({1, 1});        
     Polynomial<int> quotient = p3 / p4;
     cout << "\n(1 + x^3) / (1 + x) = " << quotient.coefficient(0) << " + "
          << quotient.coefficient(1) << "x + " << quotient.coefficient(2) << "x^2" << endl;
