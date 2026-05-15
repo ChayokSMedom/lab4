@@ -8,7 +8,6 @@ int main(int argc, char** argv) {
     return RUN_ALL_TESTS();
 }
 
-// ==================== Тесты для конструкторов ====================
 
 TEST(PolynomialTest, DefaultConstructor) {
     Polynomial<int> p;
@@ -42,7 +41,6 @@ TEST(PolynomialTest, ZeroVectorConstructor) {
     EXPECT_EQ(p.degree(), -1);
 }
 
-// ==================== Тесты для degree и coefficient ====================
 
 TEST(PolynomialTest, DegreeTest) {
     EXPECT_EQ(Polynomial<int>({1, 2, 3}).degree(), 2);
@@ -70,7 +68,6 @@ TEST(PolynomialTest, SetCoefficientTest) {
     EXPECT_EQ(p.degree(), 5);
 }
 
-// ==================== Тесты для сложения ====================
 
 TEST(PolynomialTest, AdditionTest) {
     Polynomial<int> p1({1, 2, 3});
@@ -92,7 +89,6 @@ TEST(PolynomialTest, AdditionAssignTest) {
     EXPECT_EQ(p1.coefficient(2), 3);
 }
 
-// ==================== Тесты для вычитания ====================
 
 TEST(PolynomialTest, SubtractionTest) {
     Polynomial<int> p1({1, 2, 3});
@@ -112,7 +108,6 @@ TEST(PolynomialTest, SubtractionResultZero) {
     EXPECT_TRUE(result.is_zero());
 }
 
-// ==================== Тесты для умножения ====================
 
 TEST(PolynomialTest, MultiplicationTest) {
     Polynomial<int> p1({1, 1});
@@ -139,7 +134,6 @@ TEST(PolynomialTest, MultiplicationByZero) {
     EXPECT_TRUE(result.is_zero());
 }
 
-// ==================== Тесты для деления ====================
 
 TEST(PolynomialTest, DivisionTest) {
     Polynomial<int> p1({1, 0, 0, 1});
@@ -168,7 +162,6 @@ TEST(PolynomialTest, DivisionByZeroThrows) {
     EXPECT_THROW(p1 % p2, std::invalid_argument);
 }
 
-// ==================== Тесты для evaluate ====================
 
 TEST(PolynomialTest, EvaluateTest) {
     Polynomial<int> p({1, 2, 3});
@@ -184,7 +177,6 @@ TEST(PolynomialTest, EvaluateZeroPolynomial) {
     EXPECT_EQ(p.evaluate(100), 0);
 }
 
-// ==================== Тесты для сравнения ====================
 
 TEST(PolynomialTest, EqualityTest) {
     Polynomial<int> p1({1, 2, 3});
@@ -203,7 +195,6 @@ TEST(PolynomialTest, EqualityWithZeros) {
     EXPECT_TRUE(p1 == p2);
 }
 
-// ==================== Тесты для вещественных чисел ====================
 
 TEST(PolynomialTest, DoubleCoefficients) {
     Polynomial<double> p({1.5, 2.5, 3.5});
